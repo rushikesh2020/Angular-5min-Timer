@@ -1,0 +1,27 @@
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <div class="jumbotron text-center">
+        <h1 class="display-1">{{ formattedTime }}</h1>
+      </div>
+      <div class="buttons text-center">
+        <button
+          class="btn m-4 btn-lg"
+          (click)="handleAction()"
+          [disabled]="time === 0 ? true : false"
+          [ngClass]="{
+            'btn-primary': buttonLabel === 'Start',
+            'btn-warning': buttonLabel === 'Pause',
+            'btn-success': buttonLabel === 'Resume'
+          }"
+        >
+          {{ buttonLabel }}
+        </button>
+
+        <button class="btn btn-danger m-4 btn-lg" (click)="onReset()">
+          Reset
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
